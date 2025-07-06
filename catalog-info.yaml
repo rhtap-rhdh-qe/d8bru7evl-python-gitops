@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: d8bru7evl-python-gitops
+  description: This is GitOps manifest for d8bru7evl-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=d8bru7evl-python
+    backstage.io/kubernetes-id: d8bru7evl-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: d8bru7evl-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:d8bru7evl-python
